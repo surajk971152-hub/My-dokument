@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjoo Gautam | Personal Website</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff8c9, #ffd52b);
+  color: #222;
+}
+
+.card {
+  max-width: 430px;
+  margin: 40px auto;
+  padding: 30px 22px;
+  text-align: center;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px #0002;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #a77b00;
+  margin-bottom: 22px;
+}
+
+.info {
+  background: #fff8d9;
+  padding: 15px;
+  border-radius: 12px;
+  line-height: 2;
+  margin: 20px 0;
+}
+
+.education {
+  padding: 14px;
+  background: #fff2a6;
+  border: 1px solid #edc52b;
+  border-radius: 12px;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ffcf00;
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.instagram {
+  background: #e1306c;
+  color: white;
+}
+
+#passwordBox {
+  display: none;
+  margin-top: 20px;
+  padding: 18px;
+  background: #fff8d9;
+  border: 1px solid #edc52b;
+  border-radius: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #aaa;
+  border-radius: 9px;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+#message {
+  margin-top: 12px;
+  color: #c62828;
+}
+
+footer {
+  margin-top: 28px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>⭐ Arjoo Gautam ⭐</h1>
+  <p class="subtitle">Welcome to My Personal Website</p>
+
+  <div class="info">
+    📸 Instagram: @arjoo4389<br>
+    👤 My Personal Profile
+  </div>
+
+  <div class="education">
+    🎓 12वीं पास | Higher Secondary
+  </div>
+
+  <a
+    class="btn instagram"
+    href="https://www.instagram.com/arjoo4389/"
+    target="_blank"
+    rel="noopener noreferrer">
+    📸 मेरा Instagram
+  </a>
+
+  <button
+    class="btn"
+    type="button"
+    onclick="showPassword()">
+    🔒 मेरा लिंक
+  </button>
+
+  <div id="passwordBox">
+    <h3>🔐 अपना पासवर्ड डालें</h3>
+
+    <form onsubmit="checkPassword(event)">
+      <input
+        type="password"
+        id="password"
+        placeholder="पासवर्ड लिखें"
+        required
+      >
+
+      <button class="btn" type="submit">
+        लिंक खोलें 🔓
+      </button>
+    </form>
+
+    <p id="message" role="status"></p>
+  </div>
+
+  <footer>
+    © 2026 Arjoo Gautam<br>
+    Made with ❤️
+  </footer>
+
+</div>
+
+<script>
+const MY_PASSWORD = "arjoo2009";
+
+const MY_LINK =
+  "https://photos.app.goo.gl/gjRLQ4XEg1BcvmWt9";
+
+function showPassword() {
+  document.getElementById("passwordBox").style.display = "block";
+  document.getElementById("message").textContent = "";
+  document.getElementById("password").focus();
+}
+
+function checkPassword(event) {
+  event.preventDefault();
+
+  const enteredPassword =
+    document.getElementById("password").value;
+
+  if (enteredPassword === MY_PASSWORD) {
+    window.open(
+      MY_LINK,
+      "_blank",
+      "noopener,noreferrer"
+    );
+    document.getElementById("message").textContent = "";
+  } else {
+    document.getElementById("message").textContent =
+      "गलत पासवर्ड! दोबारा कोशिश करें।";
+
+    document.getElementById("password").value = "";
+  }
+}
+</script>
+
+</body>
+</html>
